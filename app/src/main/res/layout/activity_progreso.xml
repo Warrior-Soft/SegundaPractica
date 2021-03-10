@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Progreso">
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_add_progreso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_add_circle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:srcCompat="@drawable/ic_baseline_add_circle" />
+
+    <TextView
+        android:id="@+id/lb_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Original"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/lb_objetivo"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lb_objetivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="28dp"
+        android:text="Objetivo"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/lb_restante"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lb_restante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="40dp"
+        android:text="Restante"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_objetivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        android:text="0.0 lb"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_restante"
+        app:layout_constraintTop_toBottomOf="@+id/lb_objetivo" />
+
+    <TextView
+        android:id="@+id/txt_restante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="72dp"
+        android:text="0.0 lb"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_restante" />
+
+    <TextView
+        android:id="@+id/txt_original"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0.0 lb"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_objetivo"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_original" />
+
+    <TextView
+        android:id="@+id/lb_mes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="52dp"
+        android:text="Mes"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/lb_total"
+        app:layout_constraintTop_toBottomOf="@+id/txt_objetivo" />
+
+    <TextView
+        android:id="@+id/lb_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="76dp"
+        android:text="Total"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_restante" />
+
+    <TextView
+        android:id="@+id/lb_semana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Semana"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/lb_mes"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_original" />
+
+    <TextView
+        android:id="@+id/txt_semana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:drawableStart="@drawable/ic_arrow_down"
+        android:text="0.0 lb"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_mes"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_semana" />
+
+    <TextView
+        android:id="@+id/txt_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="72dp"
+        android:drawableStart="@drawable/ic_arrow_down"
+        android:text="0.0 lb"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lb_total" />
+
+    <TextView
+        android:id="@+id/txt_mes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="52dp"
+        android:drawableStart="@drawable/ic_arrow_down"
+        android:text="0.0 lb"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/txt_total"
+        app:layout_constraintTop_toBottomOf="@+id/lb_mes" />
+
+    <LinearLayout
+        android:layout_width="353dp"
+        android:layout_height="336dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/progressList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="120dp"
+        android:text="Peso"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_total" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="40dp"
+        android:text="Fecha"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_semana" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
