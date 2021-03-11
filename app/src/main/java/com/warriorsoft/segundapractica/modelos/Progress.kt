@@ -16,10 +16,12 @@ interface ProgressDao {
 
     @Query("SELECT * FROM progress WHERE metaid IN (:metaIds)")
     fun loadAllByIds(metaIds: Int): List<Progress>
-/*
-    @Query("SELECT * FROM user WHERE email LIKE :email AND " +
-            "pass LIKE :pass LIMIT 1")
-    fun findByName(email: String, pass: String): User*/
+
+    @Query("SELECT * FROM progress WHERE metaid IN (:metaids) Order by(uid) desc limit 1")
+    fun findLastProgress(metaids: Int): Progress
+
+    @Query("SELECT * FROM progress WHERE metaid IN (:metaids) Order by(uid) desc limit 4")
+    fun findMonthProgress(metaids: Int): List<Progress>
 
     @Insert
     fun insertAll(vararg progresos: Progress)

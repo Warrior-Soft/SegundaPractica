@@ -18,6 +18,9 @@ class Progreso : AppCompatActivity() {
     lateinit var txtobjetivo:TextView
     lateinit var txtrestante:TextView
     lateinit var totalPeso : TextView
+    lateinit var totalSemana : TextView
+    lateinit var totalMes : TextView
+
     lateinit var progressList : RecyclerView
     lateinit var db: AppDatabase
     lateinit var Add : FloatingActionButton
@@ -43,6 +46,8 @@ class Progreso : AppCompatActivity() {
             }
         })
         totalPeso = findViewById(R.id.txt_total)
+        totalSemana = findViewById(R.id.txt_semana)
+        totalMes = findViewById(R.id.txt_mes)
 
         txtobjetivo = findViewById(R.id.txt_objetivo)
         txtoriginal = findViewById(R.id.txt_original)
@@ -55,6 +60,29 @@ class Progreso : AppCompatActivity() {
             txtrestante.text = "${meta.peso_Restante} lb"
 
             val dao = db.progressDao().loadAllByIds(meta.uid)
+
+            val dao2 = db.progressDao().findLastProgress(meta.uid)
+            val dao3 = db.progressDao().findMonthProgress(meta.uid)
+
+            if (dao != null && dao2 != null && dao3 != null){
+                var totalP = 0.0;
+                var totalPM = 0.0;
+
+                for (i in dao3){
+                    totalPM += i.progreso
+                }
+
+                for (p in dao){
+                    totalP += p.progreso
+
+                }
+                totalPeso.text = "$totalP"
+                totalSemana.text = "${dao2.progreso}"
+                totalMes.text = "$totalPM"
+            }
+
+
+
 
             if(dao == null){
                 Toast.makeText(this,"No tienes Progresos", Toast.LENGTH_SHORT).show()
